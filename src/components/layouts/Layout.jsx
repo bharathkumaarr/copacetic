@@ -10,8 +10,11 @@ export default function Layout(props){
             </main>
             <footer>
                 <small>Created by</small>
-                <a href="https://github.com/bharathkumaarr" target="_blank"></a>
+                <a href="https://github.com/bharathkumaarr" target="_blank">
+                <img src="https://avatars.githubusercontent.com/u/121338792?v=4" alt="pfp" />
+                <p>@bharathkumaarr</p>
                 <i className="fa-brands fa-github"></i>
+                </a>
             </footer>
         </>
     )
