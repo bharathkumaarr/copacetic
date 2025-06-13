@@ -97,7 +97,24 @@ section {
     left: 0;
     top: 0;
     background: var(--color-link);
+}
+.countdown-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.item-header {
+    color: var(--border-secondary); 
+}
+.today-container {
+    
+}
 
+
+.start-task {
+    width: 100%;
+    display: grid;
+    place-items: center;
 }
 
 
