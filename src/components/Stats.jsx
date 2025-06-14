@@ -1,6 +1,6 @@
 import ProgressBar from './ProgressBar'
-export default function Stats() {
-    const name = 'Bharath';
+export default function Stats(props) {
+    const {name} = props;
     const day = 16
     return (
         <div className="card stats-card">

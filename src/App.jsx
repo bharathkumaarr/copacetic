@@ -2,7 +2,7 @@ import Welcome from './components/layouts/Welcome'
 import Layout from './components/layouts/Layout'
 import Dashboard from './components/layouts/Dashboard'
 import Challenge from './components/layouts/Challenge'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [selectedPage, setSelectedPage]  = useState(0)
@@ -19,12 +19,24 @@ function App() {
     localStorage.setItem('username', name)
     handleChangePage(1)
   }
+  useEffect(()=>{
+    //callback function triggered on page load
+    if (!localStorage) {return} //exit if no acces to localstorage
+
+    if (localStorage.getItem('username') ) {
+      setName(localStorage.getItem('username'))
+
+      setSelectedPage(1)
+    }
+  }, [ ])
 
   const pages = {
     0: <Welcome handleCreateAccount={handleCreateAccount} username="hello world" name={name} setName={setName} />,
-    1: <Dashboard/>,
+    1: <Dashboard name={name}/>,
     2: <Challenge/>
   }
+
+
   return (
     <Layout> 
       {pages[selectedPage]}
