@@ -26,7 +26,7 @@ function App() {
     if (localStorage.getItem('username') ) {
       setName(localStorage.getItem('username'))
 
-      setSelectedPage(1)
+      setSelectedPage(1)    
     }
   }, [ ])
 
