@@ -4,11 +4,24 @@ import Dashboard from './components/layouts/Dashboard'
 import Challenge from './components/layouts/Challenge'
 import { useState, useEffect } from 'react'
 
+import WORDS from './utils/VOCAB.json'
+import {getWordByIndex, PLAN} from './utils'
+
 function App() {
   const [selectedPage, setSelectedPage]  = useState(0)
   // const selectedPage = 2 //zero for welcome, one for dashboard, two is for challenge
 
   const [name, setName] = useState('')
+  const [day, setDay] = useState(1)
+  const [datetime, setDatetime] = useState(null)
+  const [history, setHistory] = useState([])
+  const [attempts, setAttempts] = useState(0)
+
+  const daysWords = PLAN[day].map((idx)=>{
+    return getWordByIndex(WORDS, idx).word
+  })
+  console.log(daysWords)
+
 
   function handleChangePage(pageIndex) {
     setSelectedPage(pageIndex)
