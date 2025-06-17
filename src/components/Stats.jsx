@@ -1,7 +1,19 @@
+import { calcLevel, calculateAccuracy, calculateNewWords } from '../utils';
 import ProgressBar from './ProgressBar'
 export default function Stats(props) {
-    const {name} = props;
-    const day = 16
+    const {name, day, attempts, PLAN } = props;
+
+    const currLvl = calcLevel(day)
+    const flooredLvl = Math.floor(currLvl)
+    const remainder = (currLvl-flooredLvl)*100
+
+
+
+
+
+
+
+
     return (
         <div className="card stats-card">
             <div className="welcome-text">
@@ -18,15 +30,16 @@ export default function Stats(props) {
                 </div>
                 <div>
                     <p>Words seen</p>
-                    <h4>{101}</h4>
+                    <h4>{calculateNewWords(day-1)}</h4> 
+                    {/* day-1 because today's words we havent seen */}
                 </div>
                 <div>
                     <p>Accuracy (%)</p>
-                    <h4>{93.3.toFixed(2)}</h4>
+                    <h4>{isNaN((calculateAccuracy(attempts, day)*100).toFixed(1)) ? 0 :(calculateAccuracy(attempts, day)*100).toFixed(1) }</h4>
                 </div>
             </div>
 
-            <ProgressBar />
+            <ProgressBar text={`lvl ${flooredLvl}`} remainder={remainder}/>
             
         </div>
     ) 

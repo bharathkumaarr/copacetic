@@ -7,7 +7,7 @@ export default function Dashboard(props){
     return (
         <section id="dashboard">
             <Stats {...props}/>
-            <Countdown />
+            <Countdown {...props}/>
             <History />
         </section>
     )

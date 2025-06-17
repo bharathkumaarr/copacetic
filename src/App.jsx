@@ -20,7 +20,7 @@ function App() {
   const daysWords = PLAN[day].map((idx)=>{
     return getWordByIndex(WORDS, idx).word
   })
-  console.log(daysWords)
+  
 
 
   function handleChangePage(pageIndex) {
@@ -45,7 +45,7 @@ function App() {
 
   const pages = {
     0: <Welcome handleCreateAccount={handleCreateAccount} username="hello world" name={name} setName={setName} />,
-    1: <Dashboard name={name}/>,
+    1: <Dashboard name={name} attempts={attempts} PLAN={PLAN} day={day} handleChangePage={handleChangePage} daysWords={daysWords} datetime={datetime}/>,
     2: <Challenge/>
   }
 

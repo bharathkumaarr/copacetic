@@ -9,12 +9,14 @@ export default function Layout(props){
                 {children}
             </main>
             <footer>
+                
                 <small>Created by</small>
-                <a href="https://github.com/bharathkumaarr" target="_blank">
+                <a href="https://github.com/bharathkumaarr/copacetic" target="_blank">
                 <img src="https://avatars.githubusercontent.com/u/121338792?v=4" alt="pfp" />
                 <p>@bharathkumaarr</p>
                 <i className="fa-brands fa-github"></i>
                 </a>
+                <small>Give it a ⭐️</small>
             </footer>
         </>
     )
