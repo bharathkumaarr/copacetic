@@ -25,6 +25,7 @@ export default function Countdown(props) {
                     <p>Words for today</p>
                     <h3>  16</h3>
                 </div>
+                <DIV></DIV>
             </div>
             <button className="start-task">
                 <h6>Start</h6>
